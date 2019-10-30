@@ -87,7 +87,7 @@ class Parser(DataSource):
       raise EofException()
     header.len -= len(buf)
     val,=struct.unpack(str(slen) + "s", buf)
-    return val.decode("ascii")
+    return val.decode("utf-8")
 
   def readBn(self, header):
     blen = self.readField(header, "U1")
